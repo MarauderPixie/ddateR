@@ -28,7 +28,8 @@ ddate <- function(){
   
   
   # some things are just not meant to be defined (for now).
-  return(cat("Today is", as.character(year[nod]), ", the", nod, "th Day of Chaos in the YOLD", yold))
+  return(cat("Today is", paste0(as.character(year[nod]), ", the"), 
+             paste0(nod, "th Day of Chaos in the YOLD"), yold))
   }
 
 
@@ -37,3 +38,4 @@ ddate <- function(){
 
 nod <- as.numeric(Sys.Date() - as.Date("2016-01-01"))
 print(paste0("Today is ", year[nod]))
+
