@@ -43,22 +43,42 @@ ddate <- function() {
              if (nod == 50 && season == "Bureaucracy") {"Bureflux"} else
              if (nod == 5  && season == "The Aftermath") {"Maladay"} else
              if (nod == 50 && season == "The Aftermath") {"Afflux"} else {"nevermind"}
+  
+  tib_test <- c(((as.numeric(format(Sys.time(), "%Y")) %% 4 == F) &
+                 (as.numeric(format(Sys.time(), "%Y")) %% 100 != F)) | 
+                 (as.numeric(format(Sys.time(), "%Y")) %% 400 == F))
              
   
   
   # some things are just not meant to be defined (for now).
   if (format(Sys.Date(), "%d-%m") == "29-02") {
     return(cat("It's St. Tib's Day!"))
+  } else {
+    if (tib_test == T) {
+      year_tib <- c(rep(as.character(days), length.out = 59),
+                    "St. Tib's Day", "Setting Orange",
+                    rep(as.character(days), length.out = 305))
+      
+      return(cat("Today is", 
+                 paste0(if (holyday != "nevermind") {holyday} else {
+                   year_tib[nod]
+                 },
+                 ", the"), 
+                 paste0(nod, "th Day of"), 
+                 season, 
+                 "in the YOLD", 
+                 yold))
     } else {
-    return(cat("Today is", 
-               paste0(if (holyday != "nevermind") {holyday} else {
-                        as.character(year[nod])
-                        },
-               ", the"), 
-               paste0(nod, "th Day of"), 
-               season, 
-               "in the YOLD", 
-               yold))
+      return(cat("Today is", 
+                 paste0(if (holyday != "nevermind") {holyday} else {
+                   as.character(year[nod])
+                 },
+                 ", the"), 
+                 paste0(nod, "th Day of"), 
+                 season, 
+                 "in the YOLD", 
+                 yold))
+      }
     }
   }
 
