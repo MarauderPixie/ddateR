@@ -22,7 +22,9 @@ fnord <- function(){
               "7. never write in pencil unless you are on a train or sick in bed.",
               "Did you know you have a lopsided pineal gland?",
               "Why did the chicken cross the road.",
-              "Yo mama's so... wait, that's not right.")
+              "Yo mama's so... wait, that's not right.",
+              "Don't eat the yellow snow. Unless you're into that kind of thing, then go ahead.",
+              "00034")
   
   use <- sample(sermon, 1, replace = T)
   
