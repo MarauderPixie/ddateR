@@ -1,29 +1,9 @@
-## ...?
-
 ddate <- function() {
   # days have names and those names want to be recognized. also seasons. and holydays.
-  days     <- factor(c(1:5), labels = c("Sweetmorn", "Boomtime", "Pungenday", "Prickle-Prickle", "Setting Orange"))
-  seasons  <- factor(c(1:5), labels = c("Chaos", "Discord", "Confusion", "Bureaucracy", "The Aftermath"))
-  
-  holydays <- data.frame("5th"  = c("Mungday", "Mojoday", "Syaday", "Zaraday", "Maladay"),
-                         "50th" = c("Chaoflux", "Discoflux", "Confuflux", "Bureflux", "Afflux"))
-  holydays.m <- matrix(holydays)
-  
-  # getting to the YOLD by means of simple arithmetics, at last something they are useful for.
-  # not sure how to continue after Chaos; maybe the Eschaton has immanentized by then
+  days <- factor(c(1:5), labels = c("Sweetmorn", "Boomtime", "Pungenday", "Prickle-Prickle", "Setting Orange"))
   yold <- as.numeric(format(Sys.time(), "%Y")) + 1166
   year <- rep(days, length.out = 365)
-    chaos       <- year[1:73]
-    discord     <- year[74:146]
-    confusion   <- year[147:219]
-    bureaucracy <- year[220:292]
-    aftermath   <- year[293:365]
-    # this is actually just for your convenience and serves no purpose at all
-  
-  # maybe it's useful to look at how Greg does it
-  # today <- as.list(unlist(strsplit(system("date", T), " ")))
-  # names(today) <- c("weekday", "day", "month", "time", "timezone", "year")
-  
+
   nod <- as.numeric(Sys.Date() - as.Date("2016-01-01") + 1)
   # nod <- lubridate::yday(Sys.Date())
   
@@ -81,17 +61,3 @@ ddate <- function() {
       }
     }
   }
-
-
-# more or less useless scribbles. that's how nature works, man.
-*object* sth sth <- c("%day, %count'th Day of %season in the YOLD %yold")
-
-nod <- as.numeric(Sys.Date() - as.Date("2016-01-01"))
-print(paste0("Today is ", year[nod]))
-
-
-  # Acoount for St. Tib's Day
-
-    # if 60th day of chaos is not Setting Orange then St. Tib's Day
-
-if (nod == 60 && season == "Chaos" && as.character(year[nod]) != "Setting Orange") {"It's St. Tib's Day!"} else {year[nod]}
