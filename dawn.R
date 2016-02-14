@@ -24,11 +24,11 @@ ddate <- function(){
   # today <- as.list(unlist(strsplit(system("date", T), " ")))
   # names(today) <- c("weekday", "day", "month", "time", "timezone", "year")
   
-  nod <- as.numeric(Sys.Date() - as.Date("2016-01-01"))
+  nod <- as.numeric(Sys.Date() - as.Date("2016-01-01") + 1)
   
   
   # some things are just not meant to be defined (for now).
-  return(print(paste0("Today is ", year[nod])))
+  return(cat("Today is", as.character(year[nod]), ", the", nod, "th Day of Chaos"))
   }
 
 
