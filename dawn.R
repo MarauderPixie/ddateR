@@ -18,15 +18,22 @@ ddate <- function(){
     confusion   <- year[147:219]
     bureaucracy <- year[220:292]
     aftermath   <- year[293:365]
+    # this is actually just for your convenience and serves no purpose at all
   
   # maybe it's useful to look at how Greg does it
   today <- as.list(unlist(strsplit(system("date", T), " ")))
   names(today) <- c("weekday", "day", "month", "time", "timezone", "year")
   
+  nod <- as.numeric(Sys.Date() - as.Date("2016-01-01"))
+  
+  
   # some things are just not meant to be defined (for now).
-  return(*object*)
+  return(print(paste0("Today is ", year[nod])))
   }
 
 
 # more or less useless scribbles. that's how nature works, man.
 *object* sth sth <- c("%day, %count'th Day of %season in the YOLD %yold")
+
+nod <- as.numeric(Sys.Date() - as.Date("2016-01-01"))
+print(paste0("Today is ", year[nod]))
