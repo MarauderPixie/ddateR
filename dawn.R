@@ -25,6 +25,7 @@ ddate <- function(){
   # names(today) <- c("weekday", "day", "month", "time", "timezone", "year")
   
   nod <- as.numeric(Sys.Date() - as.Date("2016-01-01") + 1)
+  # nod <- lubridate::yday(Sys.Date())
   
   season <- if(nod <=  73){"Chaos"} else 
             if(nod >=  74 && nod <= 146){"Discord"} else
@@ -32,9 +33,22 @@ ddate <- function(){
             if(nod >= 220 && nod <= 292){"Bureaucracy"} else
             if(nod >= 293 && nod <= 365){"The Aftermath"}
   
+  holyday <- if(nod == 5  && season == "Chaos"){"Mungday"} else
+             if(nod == 50 && season == "Chaos"){"Chaoflux"} else
+             if(nod == 5  && season == "Discord"){"Mojoday"} else
+             if(nod == 50 && season == "Discord"){"Discoflux"} else
+             if(nod == 5  && season == "Confusion"){"Syaday"} else
+             if(nod == 50 && season == "Confusion"){"Confuflux"} else
+             if(nod == 5  && season == "Bureaucracy"){"Zaraday"} else
+             if(nod == 50 && season == "Bureaucracy"){"Bureflux"} else
+             if(nod == 5  && season == "The Aftermath"){"Maladay"} else
+             if(nod == 50 && season == "The Aftermath"){"Afflux"} else {"nevermind"}
+             
+  
   
   # some things are just not meant to be defined (for now).
-  return(cat("Today is", paste0(as.character(year[nod]), ", the"), 
+  return(cat("Today is", paste0(if(holyday != "nevermind"){holyday} 
+                                else {as.character(year[nod])}, ", the"), 
              paste0(nod, "th Day of"), season, "in the YOLD", yold))
   }
 
