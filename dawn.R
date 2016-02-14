@@ -47,9 +47,19 @@ ddate <- function() {
   
   
   # some things are just not meant to be defined (for now).
-  return(cat("Today is", paste0(if (holyday != "nevermind") {holyday} 
-                                else {as.character(year[nod])}, ", the"), 
-             paste0(nod, "th Day of"), season, "in the YOLD", yold))
+  if (format(Sys.Date(), "%d-%m") == "29-02") {
+    return(cat("It's St. Tib's Day!"))
+    } else {
+    return(cat("Today is", 
+               paste0(if (holyday != "nevermind") {holyday} else {
+                        as.character(year[nod])
+                        },
+               ", the"), 
+               paste0(nod, "th Day of"), 
+               season, 
+               "in the YOLD", 
+               yold))
+    }
   }
 
 
