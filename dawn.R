@@ -11,9 +11,13 @@ ddate <- function(){
   
   # getting to the YOLD by means of simple arithmetics, at last something they are useful for.
   # not sure how to continue after Chaos; maybe the Eschaton has immanentized by then
-  yold  <- as.numeric(today$year) + 1166
-  chaos <- rep(days, length.out = 73)
-  
+  yold <- as.numeric(today$year) + 1166
+  year <- rep(days, length.out = 365)
+    chaos       <- year[1:73]
+    discord     <- year[74:146]
+    confusion   <- year[147:219]
+    bureaucracy <- year[220:292]
+    aftermath   <- year[293:365]
   
   # maybe it's useful to look at how Greg does it
   today <- as.list(unlist(strsplit(system("date", T), " ")))
