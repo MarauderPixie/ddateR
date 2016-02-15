@@ -60,10 +60,6 @@ ddate_convert <- function(greg = Sys.Date()) {
                  "in the YOLD",
                  yold))
     } else {
-
-      # season_day <- season_day + 1
-      nod <- nod + 1
-
       return(cat("Today is",
                  paste0(if (holyday != "nevermind") {holyday} else {
                    as.character(year[nod])
