@@ -30,6 +30,7 @@ ddate_convert <- function(greg = Sys.Date()) {
                 if (season == "Bureaucracy") {nod - 219} else
                 if (season == "The Aftermath") {nod - 292}
 
+  # Account for St.Tib's
   holyday <- if (season_day == 5  && season == "Chaos") {"Mungday"} else
              if (season_day == 50 && season == "Chaos") {"Chaoflux"} else
              if (season_day == 5|6   && season == "Discord") {"Mojoday"} else
@@ -47,16 +48,12 @@ ddate_convert <- function(greg = Sys.Date()) {
     return(cat("It's St. Tib's Day!"))
   } else {
     if (tib_test == T && nod >= 61) {
-
-      season_day <- season_day - 1
-      nod <- nod - 1
-
       return(cat("Today is",
                  paste0(if (holyday != "nevermind") {holyday} else {
-                   year[nod]
+                   year[nod - 1]
                  },
                  ", the"),
-                 paste0(season_day, "th Day of"),
+                 paste0(season_day - 1, "th Day of"),
                  season,
                  "in the YOLD",
                  yold))
