@@ -18,22 +18,22 @@ ddate_convert <- function(greg = Sys.Date()) {
             if (nod >= 220 && nod <= 292) {"Bureaucracy"} else
             if (nod >= 293 && nod <= 365) {"The Aftermath"}
 
-  holyday <- if (nod == 5  && season == "Chaos") {"Mungday"} else
-             if (nod == 50 && season == "Chaos") {"Chaoflux"} else
-             if (nod == 5  && season == "Discord") {"Mojoday"} else
-             if (nod == 50 && season == "Discord") {"Discoflux"} else
-             if (nod == 5  && season == "Confusion") {"Syaday"} else
-             if (nod == 50 && season == "Confusion") {"Confuflux"} else
-             if (nod == 5  && season == "Bureaucracy") {"Zaraday"} else
-             if (nod == 50 && season == "Bureaucracy") {"Bureflux"} else
-             if (nod == 5  && season == "The Aftermath") {"Maladay"} else
-             if (nod == 50 && season == "The Aftermath") {"Afflux"} else {"nevermind"}
-
   season_day <- if (season == "Chaos") {nod} else
                 if (season == "Discord") {nod - 73} else
                 if (season == "Confusion") {nod - 146} else
                 if (season == "Bureaucracy") {nod - 219} else
                 if (season == "The Aftermath") {nod - 292}
+
+  holyday <- if (season_day == 5  && season == "Chaos") {"Mungday"} else
+             if (season_day == 50 && season == "Chaos") {"Chaoflux"} else
+             if (season_day == 5  && season == "Discord") {"Mojoday"} else
+             if (season_day == 50 && season == "Discord") {"Discoflux"} else
+             if (season_day == 5  && season == "Confusion") {"Syaday"} else
+             if (season_day == 50 && season == "Confusion") {"Confuflux"} else
+             if (season_day == 5  && season == "Bureaucracy") {"Zaraday"} else
+             if (season_day == 50 && season == "Bureaucracy") {"Bureflux"} else
+             if (season_day == 5  && season == "The Aftermath") {"Maladay"} else
+             if (season_day == 50 && season == "The Aftermath") {"Afflux"} else {"nevermind"}
 
   tib_test <- c(((as.numeric(format(greg, "%Y")) %% 4 == F) &
                   (as.numeric(format(greg, "%Y")) %% 100 != F)) |
