@@ -3,6 +3,7 @@
 #' Join the KSC now. Defnordify the world. Peace out.
 #'
 #' @return Sacred sermons of the POEE as scribed by pope Pixie Marauder I
+#' @export
 
 fnord <- function(){
   sermon <- c("RUN!",
