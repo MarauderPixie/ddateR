@@ -6,16 +6,10 @@
 \usage{
 fnord()
 }
-\arguments{
-\item{none}{really}
-}
 \value{
 Sacred sermons of the POEE as scribed by pope Pixie Marauder I
 }
 \description{
 Join the KSC now. Defnordify the world. Peace out.
-}
-\examples{
-fnord()
 }
 

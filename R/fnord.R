@@ -2,10 +2,7 @@
 #'
 #' Join the KSC now. Defnordify the world. Peace out.
 #'
-#' @param none really
 #' @return Sacred sermons of the POEE as scribed by pope Pixie Marauder I
-#' @examples
-#' fnord()
 
 fnord <- function(){
   sermon <- c("RUN!",
