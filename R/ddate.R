@@ -1,6 +1,5 @@
 #' Converting Greg's to POEE date.
 #'
-#' @param "" This function is serious business, it doesn't take arguments from anyone.
 #' @return The current day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
 #' @export
 

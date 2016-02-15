@@ -1,10 +1,10 @@
-Package: poeecal
+Package: ddateR
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1
+Title: Everything the sophisticated Discordian needs
+Version: 0.2
 Date: 2016-02-14
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
+Authors@R: person("Pixie", "Marauder", email = "first.last@example.com", role = c("aut", "cre"))
+Description: Complete rip-off of ddate
 License: public domain - all rites reversed
 LazyData: TRUE
 RoxygenNote: 5.0.1
