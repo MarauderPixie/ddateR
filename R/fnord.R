@@ -1,3 +1,5 @@
+#' Fnord.
+#'
 #' Join the KSC now. Defnordify the world. Peace out.
 #'
 #' @param none really
