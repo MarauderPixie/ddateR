@@ -12,6 +12,12 @@ ddate_convert <- function(greg = Sys.Date()) {
   # nod <- as.numeric(greg - as.Date("2016-01-01") + 1)
   nod <- lubridate::yday(greg)
 
+
+  tib_test <- c(((as.numeric(format(greg, "%Y")) %% 4 == F) &
+                 (as.numeric(format(greg, "%Y")) %% 100 != F)) |
+                 (as.numeric(format(greg, "%Y")) %% 400 == F))
+
+
   season <- if (nod <=  73) {"Chaos"} else
             if (nod >=  74 && nod <= 146) {"Discord"} else
             if (nod >= 147 && nod <= 219) {"Confusion"} else
@@ -34,11 +40,6 @@ ddate_convert <- function(greg = Sys.Date()) {
              if (season_day == 50 && season == "Bureaucracy") {"Bureflux"} else
              if (season_day == 5  && season == "The Aftermath") {"Maladay"} else
              if (season_day == 50 && season == "The Aftermath") {"Afflux"} else {"nevermind"}
-
-  tib_test <- c(((as.numeric(format(greg, "%Y")) %% 4 == F) &
-                  (as.numeric(format(greg, "%Y")) %% 100 != F)) |
-                  (as.numeric(format(greg, "%Y")) %% 400 == F))
-
 
 
   # some things are just not meant to be defined (for now).
