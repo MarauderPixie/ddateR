@@ -1,3 +1,10 @@
+#' Join the KSC now. Defnordify the world. Peace out.
+#'
+#' @param none really
+#' @return Sacred sermons of the POEE as scribed by pope Pixie Marauder I
+#' @examples
+#' fnord()
+
 fnord <- function(){
   sermon <- c("RUN!",
               "You said something...?",
@@ -24,8 +31,8 @@ fnord <- function(){
               "Yo mama's so... wait, that's not right.",
               "Don't eat the yellow snow. Unless you're into that kind of thing, then go ahead.",
               "00034")
-  
+
   use <- sample(sermon, 1, replace = T)
-  
+
   return(use)
 }
