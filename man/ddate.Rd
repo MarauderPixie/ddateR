@@ -2,7 +2,7 @@
 % Please edit documentation in R/ddate.R
 \name{ddate}
 \alias{ddate}
-\title{Converting Greg's to POEE date.}
+\title{Printing the POEE date.}
 \usage{
 ddate()
 }
@@ -10,6 +10,6 @@ ddate()
 The current day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
 }
 \description{
-Converting Greg's to POEE date.
+Printing the POEE date.
 }
 
