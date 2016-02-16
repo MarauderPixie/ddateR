@@ -3,7 +3,7 @@
 #' @return The current day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
 #' @export
 
-ddate <- function(greg = Sys.Date()) {
+poee <- function(greg = Sys.Date()) {
   # days have names and those names want to be recognized. also seasons. and holydays.
   days <- factor(c(1:5), labels = c("Sweetmorn", "Boomtime", "Pungenday", "Prickle-Prickle", "Setting Orange"))
   # The year of the curse of Grayface, the first Year of Our Lady of Discord
@@ -78,7 +78,7 @@ ddate <- function(greg = Sys.Date()) {
                     "in the YOLD",
                     yold)
 
-      cat(yand)
+
       invisible(yand)
       }
   }
