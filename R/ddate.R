@@ -55,22 +55,31 @@ ddate <- function(greg = Sys.Date()) {
 
   # now get it out!
   if (format(greg, "%d-%m") == "29-02") {
-    return(cat("It's St. Tib's Day!"))
+    tib <- "It's St. Tib's Day!"
+
+    cat(tib)
+    invisible(tib)
   } else {
     if (holyday != "nevermind") {
-      return(cat("It is",
-                 holyday,
-                 "in the YOLD",
-                 paste0(yold, "! Celebrate!")))
-      } else {
+      holy <- paste("It is",
+                    holyday,
+                    "in the YOLD",
+                    paste0(yold, "! Celebrate!"))
+
+      cat(holy)
+      invisible(holy)
+    } else {
       nod <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
 
-      return(cat("Today is",
-                 paste0(as.character(year[nod]), ", the"),
-                 paste0(season_day, stndrdth(season_day), " Day of"),
-                 season,
-                 "in the YOLD",
-                 yold))
+      yand <- paste("Today is",
+                    paste0(as.character(year[nod]), ", the"),
+                    paste0(season_day, "th Day of"),
+                    season,
+                    "in the YOLD",
+                    yold)
+
+      cat(yand)
+      invisible(yand)
       }
   }
 }
