@@ -45,7 +45,15 @@ ddate <- function(greg = Sys.Date()) {
              if (season_day == 50 && season == "The Aftermath") {"Afflux"} else {"nevermind"}
 
 
-  # some things are just not meant to be defined (for now).
+  # with a little help from the all-knowing dumpster
+  stndrdth <- function(black_metal) {
+    gwargh <- c("st", "nd", "rd", rep("th", 17))
+    gwargh[((black_metal - 1) %% 10 + 1) + 10 *
+           (((black_metal %% 100) %/% 10) == 1)]
+  }
+
+
+  # now get it out!
   if (format(greg, "%d-%m") == "29-02") {
     return(cat("It's St. Tib's Day!"))
   } else {
@@ -59,7 +67,7 @@ ddate <- function(greg = Sys.Date()) {
 
       return(cat("Today is",
                  paste0(as.character(year[nod]), ", the"),
-                 paste0(season_day, "th Day of"),
+                 paste0(season_day, stndrdth(season_day), " Day of"),
                  season,
                  "in the YOLD",
                  yold))
