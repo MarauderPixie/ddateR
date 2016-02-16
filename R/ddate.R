@@ -1,6 +1,6 @@
 #' Converting Greg's to POEE date.
 #'
-#' @return The current day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
+#' @return The current (or given) day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
 #' @export
 
 poee <- function(greg = Sys.Date()) {

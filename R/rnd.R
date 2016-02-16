@@ -2,7 +2,7 @@
 #'
 #' Use with caution.
 #'
-#' @return POEE date, lest there's a hiccup
+#' @return POEE date, unless there's a hiccup, but it'll sort itself out
 #' @export
 
 ddate <- function() {
