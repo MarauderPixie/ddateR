@@ -21,11 +21,11 @@ ddate <- function(greg = Sys.Date()) {
   # Account for St.Tib's
   season_day <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
 
-  season <- if (nod <=  73) {"Chaos"} else
-            if (nod >=  74 && nod <= 146) {"Discord"} else
-            if (nod >= 147 && nod <= 219) {"Confusion"} else
-            if (nod >= 220 && nod <= 292) {"Bureaucracy"} else
-            if (nod >= 293 && nod <= 365) {"The Aftermath"}
+  season <- if (nod <=  74) {"Chaos"} else
+            if (nod >=  75 && nod <= 147) {"Discord"} else
+            if (nod >= 148 && nod <= 220) {"Confusion"} else
+            if (nod >= 221 && nod <= 293) {"Bureaucracy"} else
+            if (nod >= 294 && nod <= 366) {"The Aftermath"}
 
   season_day <- if (season == "Chaos") {season_day} else
                 if (season == "Discord") {season_day - 73} else
