@@ -49,16 +49,20 @@ ddate <- function(greg = Sys.Date()) {
   if (format(greg, "%d-%m") == "29-02") {
     return(cat("It's St. Tib's Day!"))
   } else {
-    nod <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
+    if (holyday != "nevermind") {
+      return(cat("It is",
+                 holyday,
+                 "in the YOLD",
+                 paste0(yold, "! Celebrate!")))
+      } else {
+      nod <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
 
-    return(cat("Today is",
-                 paste0(if (holyday != "nevermind") {holyday} else {
-                   as.character(year[nod])
-                 },
-                 ", the"),
+      return(cat("Today is",
+                 paste0(as.character(year[nod]), ", the"),
                  paste0(season_day, "th Day of"),
                  season,
                  "in the YOLD",
                  yold))
+      }
   }
 }
