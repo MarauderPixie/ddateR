@@ -30,7 +30,10 @@ fnord <- function(){
               "Why did the chicken cross the road.",
               "Yo mama's so... wait, that's not right.",
               "Don't eat the yellow snow. Unless you're into that kind of thing, then go ahead.",
-              "00034")
+              "00034",
+              "Or not.",
+              "The uproar of one hand clapping.",
+              "ODD# II/2,xii;68Chs3136")
 
   use <- sample(sermon, 1, replace = T)
 
