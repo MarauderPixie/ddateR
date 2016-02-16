@@ -17,6 +17,8 @@ ddate_convert <- function(greg = Sys.Date()) {
                  (as.numeric(format(greg, "%Y")) %% 100 != F)) |
                  (as.numeric(format(greg, "%Y")) %% 400 == F))
 
+  # Account for St.Tib's
+  season_day <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
 
   season <- if (nod <=  73) {"Chaos"} else
             if (nod >=  74 && nod <= 146) {"Discord"} else
@@ -30,17 +32,16 @@ ddate_convert <- function(greg = Sys.Date()) {
                 if (season == "Bureaucracy") {nod - 219} else
                 if (season == "The Aftermath") {nod - 292}
 
-  # Account for St.Tib's
   holyday <- if (season_day == 5  && season == "Chaos") {"Mungday"} else
              if (season_day == 50 && season == "Chaos") {"Chaoflux"} else
-             if (season_day == 5|6   && season == "Discord") {"Mojoday"} else
-             if (season_day == 50|51 && season == "Discord") {"Discoflux"} else
-             if (season_day == 5|6   && season == "Confusion") {"Syaday"} else
-             if (season_day == 50|51 && season == "Confusion") {"Confuflux"} else
-             if (season_day == 5|6   && season == "Bureaucracy") {"Zaraday"} else
-             if (season_day == 50|51 && season == "Bureaucracy") {"Bureflux"} else
-             if (season_day == 5|6   && season == "The Aftermath") {"Maladay"} else
-             if (season_day == 50|51 && season == "The Aftermath") {"Afflux"} else {"nevermind"}
+             if (season_day == 5  && season == "Discord") {"Mojoday"} else
+             if (season_day == 50 && season == "Discord") {"Discoflux"} else
+             if (season_day == 5  && season == "Confusion") {"Syaday"} else
+             if (season_day == 50 && season == "Confusion") {"Confuflux"} else
+             if (season_day == 5  && season == "Bureaucracy") {"Zaraday"} else
+             if (season_day == 50 && season == "Bureaucracy") {"Bureflux"} else
+             if (season_day == 5  && season == "The Aftermath") {"Maladay"} else
+             if (season_day == 50 && season == "The Aftermath") {"Afflux"} else {"nevermind"}
 
 
   # some things are just not meant to be defined (for now).
