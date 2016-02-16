@@ -3,7 +3,7 @@
 #' @return The current day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
 #' @export
 
-ddate <- function() {
+ye_olden_ddate <- function() {
   # days have names and those names want to be recognized. also seasons. and holydays.
   days <- factor(c(1:5), labels = c("Sweetmorn", "Boomtime", "Pungenday", "Prickle-Prickle", "Setting Orange"))
   yold <- as.numeric(format(Sys.time(), "%Y")) + 1166
