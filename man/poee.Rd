@@ -7,7 +7,7 @@
 poee(greg = Sys.Date())
 }
 \value{
-The current day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
+The current (or given) day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
 }
 \description{
 Converting Greg's to POEE date.

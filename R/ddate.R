@@ -57,7 +57,7 @@ poee <- function(greg = Sys.Date()) {
   if (format(greg, "%d-%m") == "29-02") {
     tib <- "It's St. Tib's Day!"
 
-    cat(tib)
+    return(tib)
     invisible(tib)
   } else {
     if (holyday != "nevermind") {
@@ -66,7 +66,7 @@ poee <- function(greg = Sys.Date()) {
                     "in the YOLD",
                     paste0(yold, "! Celebrate!"))
 
-      cat(holy)
+      return(holy)
       invisible(holy)
     } else {
       nod <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
@@ -78,7 +78,7 @@ poee <- function(greg = Sys.Date()) {
                     "in the YOLD",
                     yold)
 
-
+      return(yand)
       invisible(yand)
       }
   }

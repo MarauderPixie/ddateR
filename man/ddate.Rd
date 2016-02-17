@@ -7,7 +7,7 @@
 ddate()
 }
 \value{
-POEE date, lest there's a hiccup
+POEE date, unless there's a hiccup, but it'll sort itself out
 }
 \description{
 Use with caution.
