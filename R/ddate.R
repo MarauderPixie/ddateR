@@ -1,5 +1,6 @@
 #' Converting Greg's to POEE date.
 #'
+#' @param greg The date in standard ISO 8601 date format, e.g. \code{2016-02-18}.
 #' @return The current (or given) day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
 #' @export
 
@@ -11,8 +12,7 @@ poee <- function(greg = Sys.Date()) {
   year <- rep(days, length.out = 365)
 
   # nod <- as.numeric(greg - as.Date("2016-01-01") + 1)
-  nod <- lubridate::yday(greg)
-
+  nod <- unclass(as.POSIXlt(greg))$yday
 
   tib_test <- c(((as.numeric(format(greg, "%Y")) %% 4 == F) &
                  (as.numeric(format(greg, "%Y")) %% 100 != F)) |

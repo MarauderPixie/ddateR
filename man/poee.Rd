@@ -6,6 +6,9 @@
 \usage{
 poee(greg = Sys.Date())
 }
+\arguments{
+\item{greg}{The date in standard ISO 8601 date format, e.g. \code{2016-02-18}.}
+}
 \value{
 The current (or given) day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day then.
 }
