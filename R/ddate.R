@@ -73,7 +73,7 @@ poee <- function(greg = Sys.Date()) {
 
       yand <- paste("Today is",
                     paste0(as.character(year[nod]), ", the"),
-                    paste0(season_day, "th Day of"),
+                    paste0(season_day, stndrdth(nod), " Day of"),
                     season,
                     "in the YOLD",
                     yold)
