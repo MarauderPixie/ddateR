@@ -26,5 +26,6 @@ Public domain. All rites reversed.
 
 Original `ddate` from util-linux:  
   - http://linuxcommand.sourceforge.net/man_pages/ddate1.html  
+  
 The `ddate` source ripped out of util-linux and put on github:  
   - https://github.com/bo0ts/ddate
