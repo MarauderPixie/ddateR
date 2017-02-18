@@ -13,5 +13,6 @@ ddate <- function() {
 
   ticket <- sample(lottery, 1, replace = T, prob = c(0.7, 0.3))
 
-  cat(ticket)
+  return(ticket)
+  # invisible(ticket)
 }

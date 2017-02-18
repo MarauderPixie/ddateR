@@ -79,7 +79,7 @@ poee <- function(greg = Sys.Date()) {
                     yold)
       
       return(yand)
-      invisible(yand)
+      # invisible(yand)
     }
   }
 }
