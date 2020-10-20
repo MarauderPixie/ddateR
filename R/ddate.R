@@ -5,6 +5,7 @@
 #' @export
 
 poee <- function(greg = Sys.Date()) {
+  greg <- as.Date(greg)
   # days have names and those names want to be recognized. also seasons. and holydays.
   days <- factor(c(1:5), labels = c("Sweetmorn", "Boomtime", "Pungenday", "Prickle-Prickle", "Setting Orange"))
   # The year of the curse of Grayface, the first Year of Our Lady of Discord
@@ -12,14 +13,15 @@ poee <- function(greg = Sys.Date()) {
   year <- rep(days, length.out = 365)
   
   # nod <- as.numeric(greg - as.Date("2016-01-01") + 1)
-  nod <- unclass(as.POSIXlt(greg))$yday +1
+  nod <- as.numeric(format(greg, "%j")) # call it day_number at some point
   
   tib_test <- c(((as.numeric(format(greg, "%Y")) %% 4 == F) &
-                  (as.numeric(format(greg, "%Y")) %% 100 != F)) |
+                   (as.numeric(format(greg, "%Y")) %% 100 != F)) |
                   (as.numeric(format(greg, "%Y")) %% 400 == F))
   
   # Account for St.Tib's
   season_day <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
+  week_day <- as.character(year[season_day])
   
   season <- if (season_day <=  73) {"Chaos"} else
     if (season_day >=  74 && season_day <= 146) {"Discord"} else
@@ -69,14 +71,12 @@ poee <- function(greg = Sys.Date()) {
       return(holy)
       invisible(holy)
     } else {
-      nod <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
+      # nod <- if (tib_test == T && nod >= 61) {nod - 1} else {nod}
       
-      yand <- paste("Today is",
-                    paste0(as.character(year[season_day]), ", the"),
-                    paste0(season_day, stndrdth(season_day), " Day of"),
-                    season,
-                    "in the YOLD",
-                    yold)
+      yand <- paste0("Today is ", week_day, 
+                     ", the ", season_day, stndrdth(season_day), 
+                     " Day of ", season,
+                     " in the YOLD ", yold)
       
       return(yand)
       # invisible(yand)
