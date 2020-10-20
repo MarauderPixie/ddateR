@@ -7,4 +7,4 @@ Authors@R: person("Pixie", "Marauder", email = "first.last@example.com", role = 
 Description: Complete rip-off of 'ddate' to display the 'discordian' calendar date.
 License: MIT + file LICENSE
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 7.1.1

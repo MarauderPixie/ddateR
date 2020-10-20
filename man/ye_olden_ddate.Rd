@@ -12,4 +12,3 @@ The current day, season and YOLD. Except it's St. Tib's Day; it's St. Tib's Day 
 \description{
 Printing the POEE date.
 }
-

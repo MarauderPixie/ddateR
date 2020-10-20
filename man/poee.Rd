@@ -15,4 +15,3 @@ The current (or given) day, season and YOLD. Except it's St. Tib's Day; it's St.
 \description{
 Converting Greg's to POEE date.
 }
-

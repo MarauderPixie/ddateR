@@ -7,9 +7,8 @@
 fnord()
 }
 \value{
-Sacred sermons of the POEE as scribed by pope Pixie Marauder I
+Sacred sermons of the POEE as scribed by pope MarauderPixie I
 }
 \description{
 Join the KSC now. Defnordify the world. Peace out.
 }
-
